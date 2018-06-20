@@ -22,4 +22,3 @@ This script will install and configure the DWVA on your Ubuntu VM. Damn Vulnerab
 ##Creds
 1. User: admin
 1. Password: password
-
