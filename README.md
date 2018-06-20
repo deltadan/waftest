@@ -9,17 +9,17 @@ This script will install and configure the DWVA on your Ubuntu VM. Damn Vulnerab
 
 "DVWA application provides attacks to test your WAF")
 
-**Creds**
-1. User: admin
-1. Password: password
-
-**Install**
+##Install
 1. Clone repo locally
 1. Deploy an Ubuntu VM to Azure with a Public IP Address
 1. Open a NSG with Port 80 / Allow / TCP
 ![img](https://github.com/deltadan/waftest/blob/master/media/nsg.png)
 1. During provisioning add the Linux Custom script extention and configure to run the waftest.sh
-![img](https://github.com/deltadan/waftest/blob/master/media/script.png) "run linux script")
+![img](https://github.com/deltadan/waftest/blob/master/media/script.png)
 1. After the VM provisions, browse to the Public IP Address /dvwa
 1. Publish the VM behind a firewall to test the firewall and then run the attacks
+
+##Creds
+1. User: admin
+1. Password: password
 
