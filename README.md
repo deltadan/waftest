@@ -1,24 +1,23 @@
-# Docker for Windows Dev Environment
-This one click deployment will build a Docker on Windows Development box in Azure.
+# Web App used to Test Firewalls
+This script extention can be used with an Azure Ubuntu VM to build a lab for testing firewalls
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fdeltadan%2Fwindows10docker%2Fmaster%2Fazure-deploy.json" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png"/>
-</a>
+**Damn Vulnerable Web Application (DVWA)**
 
-**Software included on the VM**
+This script will install and configure the DWVA on your Ubuntu VM. Damn Vulnerable Web App (DVWA) is a PHP/MySQL web application that is damn vulnerable. Its main goals are to be an aid for security professionals to test their skills and tools in a legal environment, help web developers better understand the processes of securing web applications and aid teachers/students to teach/learn web application security in a class room environment.
 
-1. Docker for Windows Community Edition
-1. Visual Studio Community 2017 with Updates (.NET Desktop Environment, ASP and Web Development and Azure SDK)
-1. Git for Windows (bash)
-1. Visual Studio Code (Omnisharp CSharp)
+![alt test](https://github.com/deltadan/waftest/media/dvwa.png) "DVWA application provides attacks to test your WAF")
 
 **Creds**
-1. User: stormtrooperio
-1. Password: Password.1!!
+1. User: admin
+1. Password: password
 
-**Starting Docker**
-1. Once the VM is deployed use the Azure portal to connect.
-1. Double click the Docker for Windows shortcut on the desktop.
-1. It will take a few minutes for Docker to start the first time.
+**Install**
+1. Clone repo locally
+1. Deploy an Ubuntu VM to Azure with a Public IP Address
+1. Open a NSG with Port 80 / Allow / TCP
+![alt test](https://github.com/deltadan/waftest/media/nsg.png) "Open ports 22 and 80")
+1. During provisioning add the Linux Custom script extention and configure to run the waftest.sh
+![alt test](https://github.com/deltadan/waftest/media/script.png) "run linux script")
+1. After the VM provisions, browse to the Public IP Address /dvwa
+1. Publish the VM behind a firewall to test the firewall and then run the attacks
 
-![alt text](https://github.com/deltadan/windows10docker/blob/master/media/dockerrun.png "Docker is Running on Windows 10 in Azure!")
