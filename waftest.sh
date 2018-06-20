@@ -1,4 +1,5 @@
 #!/bin/bash
+#
 sudo wget https://raw.githubusercontent.com/deltadan/waftest/master/DVWA.zip
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password p@ssw0rd'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password p@ssw0rd'
